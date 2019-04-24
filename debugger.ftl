@@ -11,12 +11,22 @@
   @see				 http://freemarker.org/docs/ref_specvar.html
 
   @namespace   debugger
+  
+  The <@debugger.debug /> tag should be placed inside the top-level Freemarker template, 
+  which should look something like this: <@l.page title=pageTitle>
 
   Default usage (expands the top-level properties from .data_model):
 
     <#import "debugger.ftl" as debugger />
 
     <@debugger.debug />
+    
+  Dynamic usage (expands the top-level properties from .data_model and adds links for expandable objects):
+  This option has the best debugging experience.
+
+    <#import "debugger.ftl" as debugger />
+
+    <@debugger.debugDynamic />
 
   More examples:
 
